@@ -1,0 +1,15 @@
+.nav {
+    position: fixed;
+    top: 0;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.nav-avatar {
+    position: fixed;
+    right: 20px;
+    width: 35px;
+    object-fit: contain;
+    margin-top: 20px;
+}
