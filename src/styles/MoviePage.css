@@ -1,6 +1,11 @@
-.page-content {
-    padding: 3rem;
+.recommend-content {
+    padding-top: 3rem;
     color: #fff;
+}
+
+.movie-info{
+    display: grid;
+    column-gap: 40px;
 }
 
 .movie-title {
@@ -15,18 +20,73 @@
 }
 
 .movie-detail {
-    color: #bebebe;
+    color: #fff;
     font-size: 15px;
+    display: grid;
+    gap: 1.5rem;
 }
 
 .movie-poster{
     object-fit: contain;
     max-width: 100%;
     border-radius: 4px;
-    transition: transform 450ms;
-    max-height: 500px;
+    max-height: 350px;
 }
 
 .movie-content {
     margin-top: 20px;
+}
+
+.movie-overview {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+
+.movie-banner {
+    opacity: 0.6;
+    max-height: 600px;
+    filter: blur(15px);
+    -webkit-filter: blur(15px);
+}
+
+.movie-info {
+    position: absolute;
+    top: 6rem;
+    right: 0;
+    left: 2rem;
+}
+
+.button-group {
+    display: inline-block;
+}
+
+.play-button {
+    color: #fff;
+    border-radius: 12px;
+    outline: none;
+
+}
+
+.grey-button{
+    color: #f5f5f5;
+    border-radius: 12px;
+    margin-left: 2rem;
+    outline: none;
+}
+
+.genre-list {
+    display: flex;
+    gap: 2rem;
+}
+
+.genre {
+    border: solid 1px;
+    padding: 8px;
+    border-radius: 10px;
+    font: 9px;
+}
+
+.info-content{
+    padding: 5rem;
 }

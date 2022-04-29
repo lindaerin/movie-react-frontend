@@ -4,9 +4,10 @@ import axios from "../axios";
 import requests from "../requests";
 import "../styles/MoviePage.css";
 
-import {Container, Row, Col} from "react-bootstrap";
-import { MdTrendingUp, MdStarBorder } from "react-icons/md";
-
+import { Container, Row, Col, Button } from "react-bootstrap";
+import { MdBookmarkBorder, MdPlayCircleOutline } from "react-icons/md";
+import Recommendation from "./Recommendation";
+import Footer from "./Footer";
 
 function MoviePage() {
   let params = useParams();
@@ -26,57 +27,82 @@ function MoviePage() {
     fetchData();
   }, [movieUrl]);
 
-
   const result = [];
   result.push(movieData);
 
   console.log(result);
 
   return (
-    <div className="page-content">
-      <div>
-        {
-          result.map((data, index) => (
-            <Container key={index}>
+    <div>
+      {result.map((movie, index) => (
+        <>
+          <header>
+            <div
+              className="banner movie-banner"
+              style={{
+                backgroundSize: "cover",
+                backgroundImage: `url('https://image.tmdb.org/t/p/original/${movie?.backdrop_path}')`,
+                backgroundPosition: "0 -80px",
+                maxHeight: "450px",
+              }}
+            />
+            <Container className="movie-info">
               <Row>
-                <Col xs={8}>
-                  <div className="movie-title">{data.title}</div>
-                  <div className="movie-detail">{data.tagline}</div>
-                </Col>
                 <Col>
-                  <Row>
-                    <Col>
-                      <div className="movie-header">Popularity</div>
-                      <div className="movie-detail"><MdTrendingUp /> {data.popularity}</div>
-                    </Col>
-                    <Col>
-                      <div className="movie-header">Your Rating</div>
-                      <div className="movie-detail"><MdStarBorder /> Not Rated</div>
-                    </Col>
-                  </Row>
+                  <img
+                    key={movie.id}
+                    className="movie-poster"
+                    src={`${baseurl}${movie.poster_path}`}
+                    alt={movie.name}
+                  />
+                </Col>
+                <Col xs={8}>
+                  <div className="movie-title">{movie.title}</div>
+                  <div className="movie-detail">
+                    <div className="movie-tagline">{movie.tagline}</div>
+                    <div className="genre-list">
+                      {movie.genres?.map((genre, id) => (
+                        <div className="genre">{genre.name}</div>
+                      ))}
+                    </div>
+                    <div>{movie.overview}</div>
+                    <div className="button-group">
+                      <Button
+                        variant="warning"
+                        className="play-button"
+                        style={{ backgroundColor: "#f9c735" }}
+                      >
+                        <MdPlayCircleOutline
+                          style={{
+                            fontSize: 30,
+                            paddingInline: 5,
+                            paddingBottom: 2,
+                          }}
+                        />
+                        Play Trailer
+                      </Button>
+                      <Button variant="secondary" className="grey-button">
+                        <MdBookmarkBorder
+                          style={{
+                            fontSize: 30,
+                            paddingInline: 5,
+                            paddingBottom: 2,
+                          }}
+                        />
+                        Add to Watchlist
+                      </Button>
+                    </div>
+                  </div>
                 </Col>
               </Row>
-
-              <Row>
-                <div className="movie-content">
-                  <Col>
-                      <img
-                        className="movie-poster"
-                        key={data.id}
-                        src={`${baseurl}${data.poster_path}`}
-                        alt={data.name}
-                      />
-                  </Col>
-                  <Col>
-                    
-                  </Col>
-                </div>
-              </Row>
-
             </Container>
-          ))
-        }
-      </div>
+          </header>
+          <Container className="recommend-content">
+            <Recommendation movieId={movieId} name={movie.name} />
+          </Container>
+        </>
+      ))}
+      <Footer />
     </div>
   );
 }
