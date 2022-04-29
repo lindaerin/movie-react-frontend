@@ -1,0 +1,19 @@
+.recommend-header{
+    color: #fff;
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.posters {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+.poster {
+    object-fit: contain;
+    max-width: 100%;
+    border-radius: 6px;
+    transition: transform 450ms;
+    max-height: 250px;
+}
