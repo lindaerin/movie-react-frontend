@@ -1,3 +1,32 @@
 .page-content {
-    color: red;
+    padding: 3rem;
+    color: #fff;
+}
+
+.movie-title {
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.movie-header {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.movie-detail {
+    color: #bebebe;
+    font-size: 15px;
+}
+
+.movie-poster{
+    object-fit: contain;
+    max-width: 100%;
+    border-radius: 4px;
+    transition: transform 450ms;
+    max-height: 500px;
+}
+
+.movie-content {
+    margin-top: 20px;
 }

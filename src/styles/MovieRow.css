@@ -1,21 +1,26 @@
-.row {
-    margin-left: 20px;
+.mt-n1 {
+    padding: 2px;   
 }
+
+/* .row {
+    margin-left: 20px;
+} */
 
 .row-title {
     color: rgb(245, 245, 109);
     margin-top: 2rem;
+    margin-bottom: 1rem;
     padding-right: 20px;
 }
 
 .row-posters {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 2rem;
+    gap: 3rem;
     overflow-y: hidden;
     overflow-x: scroll;
-    padding-top: 20px;
-    padding-left: 20px;
+    /* padding-top: 20px;
+    padding-left: 20px; */
 }
 
 .row-poster{
@@ -23,7 +28,7 @@
     max-width: 100%;
     border-radius: 6px;
     transition: transform 450ms;
-    max-height: 300px;
+    max-height: 350px;
 }
 
 .row-poster:hover {

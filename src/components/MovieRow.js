@@ -3,6 +3,8 @@ import { Link, Outlet } from "react-router-dom";
 import axios from "../axios";
 import "../styles/MovieRow.css";
 
+import {Container, Row} from "react-bootstrap";
+
 const baseurl = "https://image.tmdb.org/t/p/original";
 
 function MovieRow({ title, fetchUrl }) {
@@ -12,7 +14,6 @@ function MovieRow({ title, fetchUrl }) {
     async function fetchData() {
       const request = await axios.get(fetchUrl);
       setMovies(request.data.results);
-      //console.log(request);
       return request;
     }
 
@@ -20,7 +21,8 @@ function MovieRow({ title, fetchUrl }) {
   }, [fetchUrl]);
 
   return (
-    <div className="row">
+    <Container className="mt-n1">
+      <Row>
       <div className="row-title">
         <h2>{title}</h2>
       </div>
@@ -38,7 +40,9 @@ function MovieRow({ title, fetchUrl }) {
         ))}
       </div>
       <Outlet />
-    </div>
+      </Row>
+    </Container>
+   
   );
 }
 
