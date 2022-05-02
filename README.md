@@ -17,7 +17,7 @@ Individual Movie Pages allow users to watch movie trailer, add to user watchlist
 ![alt-text](https://github.com/lindaerin/movie-react-frontend/blob/main/demo/demo-2.png)
 
 
-## Installiation
+## Install and Setup
 
 Obtain API KEY from https://www.themoviedb.org/ and config the api key in request.js
 
