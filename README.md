@@ -1,11 +1,5 @@
 ## Movie React Frontend
 
-### Spring boot api
-
-Refer to the following repo to host backend REST API
-https://github.com/The-Software-Guild/capstone-lindaerin
-
-
 ## Demo 
 Displays a list of trending movies data fetched from TMDB API
 
