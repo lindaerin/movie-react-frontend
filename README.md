@@ -1,11 +1,5 @@
 ## Movie React Frontend
 
-### Spring boot api
-
-Refer to the following repo to host backend REST API
-https://github.com/The-Software-Guild/capstone-lindaerin
-
-
 ## Demo 
 Displays a list of trending movies data fetched from TMDB API
 
@@ -17,7 +11,7 @@ Individual Movie Pages allow users to watch movie trailer, add to user watchlist
 ![alt-text](https://github.com/lindaerin/movie-react-frontend/blob/main/demo/demo-2.png)
 
 
-## Installiation
+## Install and Setup
 
 Obtain API KEY from https://www.themoviedb.org/ and config the api key in request.js
 
